@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif TC", serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* 開場 */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.intro-box {
+  text-align: center;
+}
+
+.intro button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  border: 1px solid #333;
+  background: none;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url("images/cover.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  background: rgba(255,255,255,0.8);
+  padding: 40px;
+}
+
+/* 區塊 */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section.soft {
+  background: #faf7f4;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 倒數 */
+.countdown {
+  font-size: 22px;
+}
+
+/* 相簿 */
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 30%;
+  object-fit: cover;
+}
+
+/* 按鈕 */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  padding: 40px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
