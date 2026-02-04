@@ -10,7 +10,9 @@ body {
   line-height: 1.8;
 }
 
-/* 開場 */
+/* =====================
+   開場
+===================== */
 .intro {
   position: fixed;
   inset: 0;
@@ -33,7 +35,9 @@ body {
   cursor: pointer;
 }
 
-/* Hero */
+/* =====================
+   Hero（滿版）
+===================== */
 .hero {
   height: 100vh;
   background: url("images/cover.jpg") center/cover no-repeat;
@@ -48,9 +52,16 @@ body {
   padding: 40px;
 }
 
-/* 區塊 */
+/* =====================
+   區塊（⭐ 一頁一畫面關鍵）
+===================== */
 .section {
+  min-height: 100vh;                 /* ⭐ 每一區至少一個螢幕 */
   padding: 80px 20px;
+  display: flex;                     /* ⭐ */
+  flex-direction: column;            /* ⭐ */
+  justify-content: center;            /* ⭐ 垂直置中 */
+  align-items: center;               /* ⭐ 水平置中 */
   text-align: center;
 }
 
@@ -66,40 +77,60 @@ ul {
   list-style: none;
 }
 
-/* 倒數 */
+/* =====================
+   倒數
+===================== */
 .countdown {
   font-size: 22px;
+  letter-spacing: 2px;
+  margin-top: 20px;
 }
 
-/* 相簿 */
+/* =====================
+   相簿（留白感）
+===================== */
 .gallery {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .gallery img {
   width: 30%;
   object-fit: cover;
+  border-radius: 8px;                /* ⭐ 更精緻 */
 }
 
-/* 按鈕 */
+/* =====================
+   按鈕
+===================== */
 .btn {
   display: inline-block;
   padding: 12px 28px;
   border: 1px solid #333;
   text-decoration: none;
   color: #333;
+  margin-top: 30px;
 }
 
-/* Footer */
+/* =====================
+   Footer
+===================== */
 footer {
+  min-height: 50vh;                  /* ⭐ 結尾也有留白 */
   padding: 40px;
   font-size: 12px;
   color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
-/* ===== 淡入動畫 ===== */
+
+/* =====================
+   淡入動畫（你已經做對 90%）
+===================== */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -110,3 +141,8 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ⭐ 延遲動畫（超重要，層次感來源） */
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.6s; }
+.delay-3 { transition-delay: 0.9s; }
