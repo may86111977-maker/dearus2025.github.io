@@ -8,6 +8,7 @@ body {
   font-family: "Noto Serif TC", serif;
   color: #333;
   line-height: 1.8;
+  background: #fff;            /* 保險 */
 }
 
 /* =====================
@@ -19,8 +20,8 @@ body {
   background: rgba(255,255,255,0.95);
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 99;
+  text-align: center;
+  background: #fff;   
 }
 
 .intro-box {
@@ -55,14 +56,15 @@ body {
 /* =====================
    區塊（⭐ 一頁一畫面關鍵）
 ===================== */
-.section {
-  height: 100vh;               /* ⭐ 改成強制滿版 */
+·section {
+  min-height: 100svh;          /* ⭐ 手機真實高度 */
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* ⭐ 垂直置中 */
+  justify-content: center;
   align-items: center;
   text-align: center;
+  background: #fff;            /* ⭐ 強制有背景 */
 }
 
 .section.soft {
@@ -147,3 +149,12 @@ footer {
 .delay-2 { transition-delay: 0.6s; }
 .delay-3 { transition-delay: 0.9s; }
 
+html, body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.hero,
+.section {
+  scroll-snap-align: start;
+}
