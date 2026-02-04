@@ -56,12 +56,12 @@ body {
    區塊（⭐ 一頁一畫面關鍵）
 ===================== */
 .section {
-  min-height: 100vh;                 /* ⭐ 每一區至少一個螢幕 */
-  padding: 80px 20px;
-  display: flex;                     /* ⭐ */
-  flex-direction: column;            /* ⭐ */
-  justify-content: center;            /* ⭐ 垂直置中 */
-  align-items: center;               /* ⭐ 水平置中 */
+  height: 100vh;               /* ⭐ 改成強制滿版 */
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* ⭐ 垂直置中 */
+  align-items: center;
   text-align: center;
 }
 
@@ -146,3 +146,4 @@ footer {
 .delay-1 { transition-delay: 0.3s; }
 .delay-2 { transition-delay: 0.6s; }
 .delay-3 { transition-delay: 0.9s; }
+
