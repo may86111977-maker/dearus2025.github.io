@@ -1,4 +1,15 @@
 /* =====================
+   色票（韓系關鍵）
+===================== */
+:root {
+  --bg-main: #ffffff;
+  --bg-soft: #f6f4f2;        /* 奶灰 */
+  --text-main: #2f2f2f;
+  --text-light: #777;
+  --border-soft: #e6e6e6;
+}
+
+/* =====================
    Reset
 ===================== */
 * {
@@ -11,38 +22,73 @@
    全域設定
 ===================== */
 html, body {
-  font-family: "Noto Serif TC", serif;
-  color: #333;
-  line-height: 1.8;
-  background: #fff;
+  font-family: "Inter", "Noto Serif TC", serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.9;
 
-  /* ⭐ 一頁一塊滑動 */
+  /* 一頁一塊滑動 */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
+/* 開場時鎖住滑動 */
+body.lock {
+  overflow: hidden;
+}
+
 /* =====================
-   開場 Intro
+   Typography（韓系靈魂）
+===================== */
+h1 {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+p, li {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+/* =====================
+   Intro（開場）
 ===================== */
 .intro {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.96);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
 }
 
 .intro-box {
   text-align: center;
 }
 
+.intro-box p {
+  margin-top: 10px;
+}
+
 .intro button {
-  margin-top: 30px;
-  padding: 12px 30px;
-  border: 1px solid #333;
-  background: none;
+  margin-top: 40px;
+  padding: 12px 36px;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+  color: var(--text-main);
+  letter-spacing: 2px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -50,7 +96,7 @@ html, body {
    Hero（封面滿版）
 ===================== */
 .hero {
-  min-height: 100svh;                 /* ⭐ 手機真滿版 */
+  min-height: 100svh;                     /* 手機真滿版 */
   background: url("images/cover.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -60,31 +106,32 @@ html, body {
 }
 
 .hero-text {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 40px;
+  background: rgba(255,255,255,0.75);
+  padding: 50px 40px;
+  backdrop-filter: blur(4px);             /* 韓系霧感 */
+}
+
+.hero-text p {
+  margin-top: 10px;
 }
 
 /* =====================
-   Section（每一頁一塊）
+   Section（每頁滿版）
 ===================== */
 .section {
-  min-height: 100svh;                 /* ⭐ 關鍵 */
-  padding: 60px 20px;
+  min-height: 100svh;
+  padding: 80px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;            /* 垂直置中 */
-  align-items: center;                /* 水平置中 */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: #fff;
   scroll-snap-align: start;
+  background: var(--bg-main);
 }
 
 .section.soft {
-  background: #faf7f4;
-}
-
-.section h2 {
-  margin-bottom: 20px;
+  background: var(--bg-soft);
 }
 
 /* =====================
@@ -92,20 +139,25 @@ html, body {
 ===================== */
 ul {
   list-style: none;
-  padding: 0;
+  margin-top: 10px;
+}
+
+ul li {
+  margin: 6px 0;
 }
 
 /* =====================
    倒數
 ===================== */
 .countdown {
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 2px;
   margin-top: 20px;
+  color: var(--text-main);
 }
 
 /* =====================
-   相簿
+   相簿（若之後用）
 ===================== */
 .gallery {
   display: flex;
@@ -118,19 +170,21 @@ ul {
   width: 30%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 /* =====================
-   按鈕
+   按鈕（內頁）
 ===================== */
 .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 1px solid #333;
+  margin-top: 40px;
+  padding: 12px 36px;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+  color: var(--text-main);
+  letter-spacing: 2px;
+  font-size: 12px;
   text-decoration: none;
-  color: #333;
-  margin-top: 30px;
 }
 
 /* =====================
@@ -138,23 +192,21 @@ ul {
 ===================== */
 footer {
   min-height: 100svh;
-  padding: 40px;
-  font-size: 12px;
-  color: #999;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   scroll-snap-align: start;
+  font-size: 12px;
+  color: var(--text-light);
 }
 
 /* =====================
-   淡入動畫
+   淡入動畫（慢、柔）
 ===================== */
 .fade {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(20px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
 }
 
 .fade.show {
@@ -162,7 +214,7 @@ footer {
   transform: translateY(0);
 }
 
-/* 延遲（層次感） */
-.delay-1 { transition-delay: 0.3s; }
-.delay-2 { transition-delay: 0.6s; }
-.delay-3 { transition-delay: 0.9s; }
+/* 延遲層次 */
+.delay-1 { transition-delay: 0.6s; }
+.delay-2 { transition-delay: 1s; }
+.delay-3 { transition-delay: 1.4s; }
