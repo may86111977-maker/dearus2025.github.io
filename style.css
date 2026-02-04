@@ -99,3 +99,14 @@ footer {
   color: #999;
   text-align: center;
 }
+/* ===== 淡入動畫 ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
