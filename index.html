@@ -2,87 +2,152 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>莊博雅 & 李亞宸｜婚禮邀請</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我們的婚禮</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">>
+  <!-- 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- 背景音樂 -->
-<audio id="bgm" loop>
-  <source src="music/bgm.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 開場畫面 -->
+<!-- =====================
+  開場視窗（解鎖音樂）
+===================== -->
 <div class="intro" id="intro">
-  <div class="intro-box fade show">
-    <h1 class="fade delay-1">莊博雅 & 李亞宸</h1>
-    <p class="fade delay-2">誠摯邀請您，見證這一天</p>
-    <button id="enterBtn" class="fade delay-3">開啟邀請 · 播放音樂</button>
+  <div class="intro-box">
+    <h1>我們要結婚了</h1>
+    <p>誠摯邀請您，與我們一同見證</p>
+    <button onclick="enterSite()">進入喜帖</button>
   </div>
 </div>
 
-<!-- Hero -->
-<section class="hero fade">
-  <div class="hero-text">
-    <h1 class="fade delay-1">莊博雅 & 李亞宸</h1>
-    <p class="fade delay-2">2026.10.18</p>
+<!-- 背景音樂 -->
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =====================
+  Hero 封面
+===================== -->
+<section class="hero">
+  <div class="hero-text fade">
+    <h1>Bo-Ya & Ya-Chen</h1>
+    <p>2026 · Wedding Day</p>
   </div>
 </section>
 
-<!-- 我們 -->
-<section class="section fade">
-  <h2 class="fade delay-1">我們</h2>
-  <p class="fade delay-2">
-    從國中開始的十二年，<br>
-    謝謝你，成為我人生最可靠的神隊友。
-  </p>
-</section>
-
-<!-- 婚禮資訊 -->
-<section class="section soft fade">
-  <h2 class="fade delay-1">婚禮資訊</h2>
-  <ul class="fade delay-2">
-    <li>日期｜2026 年 10 月 18 日（日）</li>
-    <li>時間｜18:00 入席</li>
-    <li>地點｜台北某某宴會廳</li>
-  </ul>
-</section>
-
-<!-- 倒數 -->
-<section class="section fade">
-  <h2 class="fade delay-1">距離這一天</h2>
-  <div id="countdown" class="countdown fade delay-2"></div>
-</section>
-
-<!-- 相簿 -->
-<section class="section soft fade">
-  <h2 class="fade delay-1">相片</h2>
-
-  <div class="gallery">
-    <img class="fade delay-1" src="images/flower1.jpg">
-    <img class="fade delay-2" src="images/flower2.jpg">
-    <img class="fade delay-3" src="images/flower3.jpg">
+<!-- =====================
+  關於我們
+===================== -->
+<section class="section soft">
+  <div class="section-inner fade">
+    <h2>關於我們</h2>
+    <p>
+      從青春的某一天開始，<br>
+      我們決定把日常，過成一輩子。
+    </p>
   </div>
 </section>
 
-<!-- RSVP -->
-<section class="section fade">
-  <h2 class="fade delay-1">出席回覆</h2>
-  <a class="btn fade delay-2" href="https://forms.gle/xxxx" target="_blank">
-    填寫出席表單
-  </a>
+<!-- =====================
+  婚禮資訊
+===================== -->
+<section class="section white">
+  <div class="section-inner fade">
+    <h2>婚禮資訊</h2>
+    <p>
+      2026 年 10 月 10 日（六）<br>
+      下午六點整<br><br>
+      台北某某飯店<br>
+      三樓 宴會廳
+    </p>
+  </div>
 </section>
 
-<footer class="fade">
-  Dearus｜為重要的一天，做一個網站
+<!-- =====================
+  倒數計時
+===================== -->
+<section class="section soft">
+  <div class="section-inner fade">
+    <h2>倒數那一天</h2>
+    <div class="countdown" id="countdown">
+      00 天 00 小時 00 分 00 秒
+    </div>
+  </div>
+</section>
+
+<!-- =====================
+  相簿
+===================== -->
+<section class="section white">
+  <div class="section-inner fade">
+    <h2>我們的片刻</h2>
+    <div class="gallery">
+      <img src="images/1.jpg" alt="">
+      <img src="images/2.jpg" alt="">
+      <img src="images/3.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- =====================
+  出席回覆
+===================== -->
+<section class="section soft">
+  <div class="section-inner fade">
+    <h2>出席回覆</h2>
+    <p>請於 9/20 前回覆是否出席</p>
+    <a href="#" class="btn">填寫表單</a>
+  </div>
+</section>
+
+<!-- =====================
+  Footer
+===================== -->
+<footer>
+  <p>With love, Bo-Ya & Ya-Chen</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- =====================
+  JS
+===================== -->
+<script>
+/* 進入網站 + 播音樂 */
+function enterSite() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("bgm").play();
+}
+
+/* 淡入動畫 */
+const fades = document.querySelectorAll(".fade");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.3 });
+
+fades.forEach(el => observer.observe(el));
+
+/* 倒數計時 */
+const targetDate = new Date("2026-10-10T18:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("countdown").innerText =
+    `${d} 天 ${h} 小時 ${m} 分 ${s} 秒`;
+}, 1000);
+</script>
+
 </body>
 </html>
-
-
