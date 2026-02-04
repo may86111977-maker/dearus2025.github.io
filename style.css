@@ -1,27 +1,37 @@
+/* =====================
+   Reset
+===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+/* =====================
+   全域設定
+===================== */
+html, body {
   font-family: "Noto Serif TC", serif;
   color: #333;
   line-height: 1.8;
-  background: #fff;            /* 保險 */
+  background: #fff;
+
+  /* ⭐ 一頁一塊滑動 */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 /* =====================
-   開場
+   開場 Intro
 ===================== */
 .intro {
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
-  text-align: center;
-  background: #fff;   
+  justify-content: center;
+  z-index: 100;
 }
 
 .intro-box {
@@ -37,34 +47,36 @@ body {
 }
 
 /* =====================
-   Hero（滿版）
+   Hero（封面滿版）
 ===================== */
 .hero {
-  height: 100vh;
-  background: url("images/cover.jpg") center/cover no-repeat;
+  min-height: 100svh;                 /* ⭐ 手機真滿版 */
+  background: url("images/cover.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  scroll-snap-align: start;
 }
 
 .hero-text {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
 }
 
 /* =====================
-   區塊（⭐ 一頁一畫面關鍵）
+   Section（每一頁一塊）
 ===================== */
-·section {
-  min-height: 100svh;          /* ⭐ 手機真實高度 */
+.section {
+  min-height: 100svh;                 /* ⭐ 關鍵 */
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;            /* 垂直置中 */
+  align-items: center;                /* 水平置中 */
   text-align: center;
-  background: #fff;            /* ⭐ 強制有背景 */
+  background: #fff;
+  scroll-snap-align: start;
 }
 
 .section.soft {
@@ -75,8 +87,12 @@ body {
   margin-bottom: 20px;
 }
 
+/* =====================
+   清單
+===================== */
 ul {
   list-style: none;
+  padding: 0;
 }
 
 /* =====================
@@ -89,7 +105,7 @@ ul {
 }
 
 /* =====================
-   相簿（留白感）
+   相簿
 ===================== */
 .gallery {
   display: flex;
@@ -100,8 +116,9 @@ ul {
 
 .gallery img {
   width: 30%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 8px;                /* ⭐ 更精緻 */
+  border-radius: 8px;
 }
 
 /* =====================
@@ -120,7 +137,7 @@ ul {
    Footer
 ===================== */
 footer {
-  min-height: 50vh;                  /* ⭐ 結尾也有留白 */
+  min-height: 100svh;
   padding: 40px;
   font-size: 12px;
   color: #999;
@@ -128,10 +145,11 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
+  scroll-snap-align: start;
 }
 
 /* =====================
-   淡入動畫（你已經做對 90%）
+   淡入動畫
 ===================== */
 .fade {
   opacity: 0;
@@ -144,17 +162,7 @@ footer {
   transform: translateY(0);
 }
 
-/* ⭐ 延遲動畫（超重要，層次感來源） */
+/* 延遲（層次感） */
 .delay-1 { transition-delay: 0.3s; }
 .delay-2 { transition-delay: 0.6s; }
 .delay-3 { transition-delay: 0.9s; }
-
-html, body {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-.hero,
-.section {
-  scroll-snap-align: start;
-}
