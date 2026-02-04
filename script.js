@@ -19,3 +19,20 @@ setInterval(() => {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   countdownEl.innerHTML = `還有 ${days} 天`;
 }, 1000);
+// ===== 滑動淡入 =====
+const fades = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+fades.forEach(el => observer.observe(el));
